@@ -3,7 +3,6 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
-import { useColorScheme } from '@/hooks/useColorScheme';
 
 import { TamaguiProvider, createTamagui } from 'tamagui'
 import { config } from '@tamagui/config/v3'
@@ -18,7 +17,6 @@ declare module '@tamagui/core' { // or 'tamagui'
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
@@ -36,7 +34,6 @@ export default function RootLayout() {
   return (
     <TamaguiProvider config={tamaguiConfig}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
     </TamaguiProvider>
