@@ -4,14 +4,15 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 
-import { TamaguiProvider, createTamagui } from 'tamagui'
-import { config } from '@tamagui/config/v3'
+import { config } from '@tamagui/config/v3';
+import { TamaguiProvider, createTamagui } from 'tamagui';
 
-const tamaguiConfig = createTamagui(config)
+const tamaguiConfig = createTamagui(config);
 
-type Conf = typeof tamaguiConfig
-declare module '@tamagui/core' { // or 'tamagui'
-  interface TamaguiCustomConfig extends Conf { }
+type Conf = typeof tamaguiConfig;
+declare module '@tamagui/core' {
+  // or 'tamagui'
+  interface TamaguiCustomConfig extends Conf {}
 }
 
 SplashScreen.preventAutoHideAsync();
