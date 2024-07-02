@@ -5,7 +5,7 @@ import {
   RiseComponents,
   SVGComponents,
   TamaguiComponents,
-} from "@rise-tools/kitchen-sink";
+} from '@rise-tools/kitchen-sink';
 
 export const components = {
   ...FormComponents,
