@@ -1,13 +1,7 @@
 import { modelSource } from '@/src/modelSource';
+import { useRiseActions } from '@/src/riseActions';
 import { components } from '@/src/riseComponents';
-import { useExpoRouterActions } from '@rise-tools/kit-expo-router';
-import {
-  useHapticsActions,
-  useLinkingActions,
-  useToastActions,
-} from '@rise-tools/kitchen-sink';
 import { Rise } from '@rise-tools/react';
-import { Link } from 'expo-router';
 
 export default function HomeScreen() {
   return (
@@ -15,21 +9,9 @@ export default function HomeScreen() {
       <Rise
         modelSource={modelSource}
         components={components}
-        path="incrementer"
-        actions={{
-          ...useHapticsActions(),
-          ...useLinkingActions(),
-          ...useToastActions(),
-          ...useExpoRouterActions({}),
-        }}
+        path="home"
+        actions={useRiseActions()}
       />
-      <Link
-        href={{
-          pathname: 'dynamic/home',
-        }}
-      >
-        Go to Dynamic Home
-      </Link>
     </>
   );
 }
